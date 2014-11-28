@@ -1,0 +1,26 @@
+{
+  "name": "marionette_example",
+  "version": "0.0.0",
+  "homepage": "https://github.com/cbroome/marionette_example",
+  "authors": [
+    "Chris Broome <chris.a.broome@gmail.com>"
+  ],
+  "description": "Minor marionette example app",
+  "keywords": [
+    "marionette",
+    "backbone",
+    "require"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "marionette": "~2.2.2",
+    "requirejs": "~2.1.15"
+  }
+}
