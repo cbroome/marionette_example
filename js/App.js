@@ -3,7 +3,9 @@ define( function( require ) {
     var Marionette = require( 'marionette' ),
         Backbone = require( 'backbone' ),
         Router = require( 'Router' ),
-        Controller = require( 'Controller' );
+        Controller = require( 'Controller' ),
+        NavigationView = require( 'view/Navigation' ),
+        RedThemeModule = require( 'module/RedTheme/Module' );
     
     return Marionette.Application.extend( {
         
@@ -15,11 +17,11 @@ define( function( require ) {
         regions: function() {
             return {
                 
-                header: 'header',
+                regionHeader: 'header',
                 
-                section: 'section',
+                regionMain: 'section',
                 
-                footer: 'footer'
+                regionFooter: 'footer'
                 
             };
         },
@@ -29,15 +31,19 @@ define( function( require ) {
          * @param   {Object}    options
          */
         start: function( options ) {
+            var navigationView = new NavigationView();
             
             // Perform the default 'start' functionality
             Marionette.Application.prototype.start.apply( this, [ options ] );     
+            
+            // Add in the site navigation
+            this.regionHeader.show( navigationView );
             
             // Add routers
             this.Router = new Router( { controller: new Controller() } );
             
             // Add modules
-            this.module( 'Admin', { moduleClass: AdminModule } );
+            this.module( 'RedThemeModule', { moduleClass: RedThemeModule } );
             
             Backbone.history.start({pushState: true});
         }
