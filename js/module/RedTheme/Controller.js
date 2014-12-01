@@ -4,7 +4,11 @@ define( function( require ) {
     
     return Marionette.Controller.extend( {
         
-        
+        catchAllRed: function() {
+            
+            console.log( 'hello red' );
+            
+        }
         
     } );
     

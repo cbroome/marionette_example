@@ -1,9 +1,11 @@
 define( function( require ) {
     
-    var Marionette = require( 'Marionette' );
+    var Marionette = require( 'marionette' );
     
-    return Marionette.Approuter.extend( {
-        
+    return Marionette.AppRouter.extend( {
+        appRoutes: {
+            'red': 'catchAllRed'  
+        }
     } );
     
 } );

@@ -12,7 +12,7 @@ define( function( require ) {
         /**
          * @property    {String}    nav     this will be a nav element
          */
-        tagName: 'nav',
+        tagName: 'ul',
 
         /**
          * 
@@ -30,7 +30,7 @@ define( function( require ) {
          */
         render: function() {
             
-            var template = _.template( '<a href="<%= url %>"><%= label %></a>' ),
+            var template = _.template( '<li><a href="<%= url %>"><%= label %></a></li>' ),
                 links = [
                     { url: '#', label: 'Home' },
                     { url: '#red', label: 'Red Module' },
@@ -56,13 +56,14 @@ define( function( require ) {
          */
         onAnchorClick: function( event ) {
             // May not be compatible with older IE versions
-            var hash = event.currentTarget.href;
+            var href = event.currentTarget.href,
+                hash = '#' + _.last( href.split( '#' ) );
             
             AppInstance = require( 'AppInstance' );
             
             // Let Backbone route this for you. Triggering forces
             // the router to load a new page
-            AppInstance.Router.navigate( href, { trigger: true } );
+            AppInstance.Router.navigate( hash, { trigger: true } );
             
             // returning false cancels the event
             return false;
