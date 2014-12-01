@@ -1,13 +1,13 @@
 define( function( require ) {
     
     var Marionette = require( 'marionette' ),
-        RedThemeRouter = require( 'module/RedTheme/Router' );
+        BlueThemeRouter = require( 'module/BlueTheme/Router' );
     
     return Marionette.Module.extend( {
  
         initialize: function() {
-            // Assign the router
-            this.Router = new RedThemeRouter( );
+            // Assign the router and controller
+            this.Router = new BlueThemeRouter( );
         }
         
     } );

@@ -1,11 +1,13 @@
 define( function( require ) {
     
     var Marionette = require( 'marionette' ),
-        RedThemeController = require( 'module/RedTheme/Controller' );
+        BlueThemeController = require( 'module/BlueTheme/Controller' );
     
     return Marionette.AppRouter.extend( {
-        appRoutes: {
-            'red': 'catchAllRed'  
+        appRoutes: function() {
+            return {
+                'blue': 'defaultBlue'  
+            };
         },
         
         /**
@@ -13,7 +15,7 @@ define( function( require ) {
          * @returns {Marionette.Controller}
          */
         _getController: function() {
-            return new RedThemeController();
+            return new BlueThemeController();
         }
     } );
     

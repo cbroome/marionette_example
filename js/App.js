@@ -5,7 +5,8 @@ define( function( require ) {
         Router = require( 'Router' ),
         Controller = require( 'Controller' ),
         NavigationView = require( 'view/Navigation' ),
-        RedThemeModule = require( 'module/RedTheme/Module' );
+        RedThemeModule = require( 'module/RedTheme/Module' ),
+        BlueThemeModule = require( 'module/blueTheme/Module' );
     
     return Marionette.Application.extend( {
         
@@ -45,7 +46,11 @@ define( function( require ) {
             // Add modules
             this.module( 'RedThemeModule', { moduleClass: RedThemeModule } );
             
-            Backbone.history.start({pushState: true});
+            // This is a very simple demo, and as such I'm going to use
+            // hashes for internal navigation.  If you want Backbone/Marionette
+            // to enforce full URLs use:
+            // Backbone.history.start( { pushState: true } );
+            Backbone.history.start( );
         }
 
     } );

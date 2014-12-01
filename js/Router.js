@@ -7,9 +7,7 @@ define( function( require ) {
     
     return Marionette.AppRouter.extend( {
         appRoutes: {
-            
-            //'admin/*path': 'admin', 
-            
+                        
             '*path': 'homePage'
             
         }
