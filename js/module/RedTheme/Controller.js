@@ -1,7 +1,7 @@
 define( function( require ) {
 
     var Marionette = require( 'marionette' ),
-        DefaultView = require( 'module/RedTheme/view/Default' ),
+        DefaultView = require( 'module/RedTheme/View/Default' ),
         AppInstance;
     
     return Marionette.Controller.extend( {

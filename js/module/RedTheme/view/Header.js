@@ -4,12 +4,15 @@ define( function( require ) {
     
     return Backbone.View.extend( {
         
+        /**
+         * @property    {String}    tagName
+         */
         tagName: 'h1',
         
         render: function() {
-            this.$el.append( 'Blue Theme Module' );
+            this.$el.append( 'Red Module' );
             return this;
-        } 
+        }
         
     } );
     

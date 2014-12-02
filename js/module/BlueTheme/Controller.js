@@ -1,20 +1,20 @@
 define( function( require ) {
 
     var Marionette = require( 'marionette' ),
-        HeaderView = require( 'module/BlueTheme/View/Header' ),
         DefaultView = require( 'module/BlueTheme/View/Default' ),
         KindOfBlueView = require( 'module/BlueTheme/View/KindOf' );
     
     return Marionette.Controller.extend( {
         
+        /**
+         * @property    {Marionette.Application}    appInstance
+         */
         appInstance: undefined,
         
         initialize: function() {
+            // An example of giving the class an instance of the 
+            // instantiated application
             this.appInstance = require( 'AppInstance' );
-        },
-        
-        _updateHeader: function() {
-              this.appInstance.regionHeader.show( HeaderView );
         },
         
         /**
@@ -22,8 +22,7 @@ define( function( require ) {
          */
         defaultBlue: function() {
             var defaultView = new DefaultView();
-            AppInstance = require( 'AppInstance' ); 
-            AppInstance.regionMain.show( defaultView );
+            this.appInstance.regionMain.show( defaultView );
         },
         
         
@@ -32,8 +31,7 @@ define( function( require ) {
          */
         kindOfBlue: function() {
             var kindOfBlueView = new KindOfBlueView();
-            AppInstance = require( 'AppInstance' ); 
-            AppInstance.regionMain.show( kindOfBlueView );
+            this.appInstance.regionMain.show( kindOfBlueView );
         }
         
         
