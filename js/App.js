@@ -18,7 +18,11 @@ define( function( require ) {
         regions: function() {
             return {
                 
+                // You can use jquery format to select regions, I'm just using
+                // tagnames for simplicity sake
                 regionHeader: 'header',
+                
+                regionNav: 'nav',
                 
                 regionMain: 'section',
                 
@@ -38,12 +42,13 @@ define( function( require ) {
             Marionette.Application.prototype.start.apply( this, [ options ] );     
             
             // Add in the site navigation
-            this.regionHeader.show( navigationView );
+            this.regionNav.show( navigationView );
             
             // Add routers
             this.Router = new Router( { controller: new Controller() } );
             
             // Add modules
+            this.module( 'BlueThemeModule', { moduleClass: BlueThemeModule } );
             this.module( 'RedThemeModule', { moduleClass: RedThemeModule } );
             
             // This is a very simple demo, and as such I'm going to use

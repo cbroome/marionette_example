@@ -4,10 +4,11 @@ define( function( require ) {
         BlueThemeController = require( 'module/BlueTheme/Controller' );
     
     return Marionette.AppRouter.extend( {
-        appRoutes: function() {
-            return {
-                'blue': 'defaultBlue'  
-            };
+        appRoutes: {
+            // defaultBlue is a method defined in BlueThemeController
+            'blue': 'defaultBlue',
+            
+            'blue/kindof': 'kindOfBlue'
         },
         
         /**

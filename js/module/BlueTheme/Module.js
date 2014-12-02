@@ -6,7 +6,7 @@ define( function( require ) {
     return Marionette.Module.extend( {
  
         initialize: function() {
-            // Assign the router and controller
+            // Assign the router
             this.Router = new BlueThemeRouter( );
         }
         

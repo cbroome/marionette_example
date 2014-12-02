@@ -4,6 +4,10 @@ define( function( require ) {
         RedThemeController = require( 'module/RedTheme/Controller' );
     
     return Marionette.AppRouter.extend( {
+        
+        /**
+         * @property    {Object}    appRoutes
+         */
         appRoutes: {
             'red': 'catchAllRed'  
         },
