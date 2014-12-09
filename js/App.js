@@ -6,7 +6,8 @@ define( function( require ) {
         Controller = require( 'Controller' ),
         NavigationView = require( 'view/Navigation' ),
         RedThemeModule = require( 'module/RedTheme/Module' ),
-        BlueThemeModule = require( 'module/blueTheme/Module' );
+        BlueThemeModule = require( 'module/BlueTheme/Module' ),
+        UniversalFooter = require( 'view/UniversalFooter' );
     
     return Marionette.Application.extend( {
         
@@ -56,6 +57,9 @@ define( function( require ) {
             // to enforce full URLs use:
             // Backbone.history.start( { pushState: true } );
             Backbone.history.start( );
+            
+            // show the footer
+            this.regionFooter.show( new UniversalFooter() );
         }
 
     } );
