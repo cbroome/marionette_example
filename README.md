@@ -1,9 +1,10 @@
 Example Marionette App
 ======================
+A robust Marionette example that uses RequireJS, app routing, and module routing. 
+
+This code is hosted live on http://marionette.ditherandbicker.com 
 
 Read more about this on [Dither and Bicker](http://www.ditherandbicker.com/posts/2014-12-09-marionette-example-app.html).
-
-A robust Marionette example that uses RequireJS, app routing, and module routing. 
 
 Specific examples of typical Marionette tasks: 
  * [Defining a router for the application](https://github.com/cbroome/marionette_example/blob/master/js/Router.js)
